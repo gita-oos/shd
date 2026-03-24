@@ -411,10 +411,10 @@ def automats(kola, summa):
 
     if nauda==20  or nauda==10 or nauda==5
      '''
-
+'''
 v=input("ievadi virkni: ")
 '''
-
+'''
 v3=''
 for i in range(len(v)):
     if v[i]=="a" or v[i]=="e" or v[i]=="i" or v[i]=="o" or v[i]=="u":
@@ -466,8 +466,147 @@ elif len(v1)<len(v2):
 else:
         print("vieknes ir vienadas")
  '''
-
+'''
 v=input("iv vi:")
+'''
+
+'''
+import random
+sk=[-24,-18,2,6]
+skaitli=[]
+for i in range(7):
+    sk1=random.randint(-13,28)
+    skaitli.insert(i,sk1)
+print(skaitli)
+#skaitli+=sk
+skaitli.extend(sk)
+#skaitli.insert( 0,sk)
+print(skaitli)
+skaitli.append(-23)
+skaitli.insert( 2,-19)
+print(skaitli)
+skaitli.remove(skaitli[5])
+print(skaitli)
+
+datne=open("skaitli.txt","w",encoding="utf-8")
+datne.write(str(skaitli))
+datne.close()
+
+print(f"min={min(skaitli)},max={max(skaitli)},vid={sum(skaitli)/len(skaitli)}")
+'''
+'''
+fails=open("vardi (1).txt","r",encoding="utf-8")
+dati=fails.read().split(", ")
+dati.sort()
+print(type(dati))
+for i in dati:
+    if i.startswith("R")==True:
+        print(i)
+
+'''
+
+
+
+'''
+
+vardi=[ ]
+
+datne=open("vardi(1).txt","r",encoding="utf-8")
+dati=datne.read()
+print(dati)
+print(type(dati))
+vardi.sort()
+
+vardi = dati.split(", ")
+for i in vardi:
+    if i.startswith("R")==True:
+        print(i)
+    with open("r.txt","w",encoding="utf-8")as f:
+        f.write(i+", ")
+
+datne.close()
+'''
+
+
+'''
+
+import json
+mp=["vesture","sport","matematika","biologija","latviešu"]
+
+
+datne=open("macibuprieksmeti.txt","r")
+json.load(datne)
+print(mp)
+datne.close()
+
+'''
+
+
+'''
+import json
+f=open("uzd.json","r+")
+skaitli=[1,2,3,4,1]
+
+
+json.dump(skaitli,f)
+f.close()
+f=open("uzd.json","r+")
+dati=json.load(f)
+print(dati)
+'''
+'''
+import re
+text="mans  telefona nr. ir 12345678"
+atbilde=re.search(r"\d{8}",text)
+print(atbilde.group())
+
+atbilde2=re.findall(r"\d{8}",text)
+print(atbilde2)
+
+atbilde3=re.search(r"telefona",text)
+print(atbilde3.group())
+
+atbilde4=re.sub(r"d{8}","********",text)
+print(atbilde4)
+
+'''
+import re
+with open("klienti.txt","r",encoding="utf-8") as datne:
+    dati= datne.read()
+
+
+epasti=re.findall(r"\w+@\w+.\w+",dati)
+
+print(epasti)
+print(len(epasti))
+
+telefoni=re.findall(r"\d{8}",dati)
+print(telefoni)
+
+
+
+aizvietots=re.sub(r"\d{8}","📱",dati)
+print(aizvietots)
+
+datne=open("klienti_anon.txt","w",encoding="utf-8")
+datne.write(aizvietots)
+datne.close()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
